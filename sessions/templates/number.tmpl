@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hello world</title>
+    </head>
+    <body>
+        <h1>What's your favourite number?</h1>
+        
+            <form action="/number" method="post">
+                <p>
+                    <label>What's your favourite number? <input type="text" name="number" value="{{ .Number }}"></label>
+                </p>
+                <p>
+                    <button type="submit">submit</button>
+                </p>
+            </form>
+      
+        <p>
+            <a href="/">Go back</a>
+        </p>
+    </body>
+</html>

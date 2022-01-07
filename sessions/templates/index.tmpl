@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hello world</title>
+    </head>
+    <body>
+        <h1>Hello {{ if .Name }}{{ .Name }}{{ else }}you{{ end }}</h1>
+        <p>
+            Your name is:
+            {{ if .Name }}
+                <strong>{{ .Name }}</strong>
+                <a href="/name">change</a>
+            {{ else }}
+                <a href="/name">can you tell me your name?</a>
+            {{ end }}
+        </p>
+        <p>
+            Your favourite number is:
+            {{ if .Number }}
+                <strong>{{ .Number }}</strong>
+                <a href="/number">change</a>
+            {{ else }}
+                <a href="/number">can you tell me your favourite number?</a>
+            {{ end }}
+        </p>
+    </body>
+</html>
