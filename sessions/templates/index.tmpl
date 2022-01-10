@@ -23,5 +23,8 @@
                 <a href="/number">can you tell me your favourite number?</a>
             {{ end }}
         </p>
+        {{ if and .Number .Name }}
+        <p>Your query string would look something like this <a href="?name={{ .Name }}&number={{ .Number }}">?name={{ .Name }}&number={{ .Number }}</a></p>
+        {{ end }}
     </body>
 </html>
