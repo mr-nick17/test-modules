@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/gob"
-	"learning/sessions/handlers"
-	"learning/sessions/model"
 	"net/http"
+	"test-modules/sessions/handlers"
+	"test-modules/sessions/model"
 
 	"github.com/gorilla/mux"
 )

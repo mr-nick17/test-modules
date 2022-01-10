@@ -3,10 +3,9 @@ package handlers
 import (
 	"html/template"
 	"net/http"
+	"test-modules/sessions/model"
 
 	"github.com/gorilla/sessions"
-
-	"learning/sessions/model"
 )
 
 var (
