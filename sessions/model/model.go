@@ -1,8 +1,9 @@
 package model
 
 type LandingPage struct {
-	Name   string
-	Number string
+	Name        string
+	Number      string
+	QueryString string
 }
 
 type NameData struct {

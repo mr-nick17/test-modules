@@ -3,6 +3,7 @@ package handlers
 import (
 	"html/template"
 	"net/http"
+	"net/url"
 	"test-modules/sessions/model"
 
 	"github.com/gorilla/sessions"
@@ -26,7 +27,18 @@ func IndexPageHandler() http.HandlerFunc {
 		}
 
 		sd := getSessionData(session)
-		page := model.LandingPage(sd)
+		page := model.LandingPage{
+			Name:   sd.Name,
+			Number: sd.Number,
+		}
+
+		emptyObj := model.SessionData{}
+		if sd != emptyObj {
+			generatedQs := url.Values{}
+			generatedQs.Add("name", sd.Name)
+			generatedQs.Add("number", sd.Number)
+			page.QueryString = generatedQs.Encode()
+		}
 
 		tmpl.Execute(w, page)
 	}
